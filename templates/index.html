@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<title> {{title}}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='forms.css')}}">
+{%endblock%}
+{%block main_content%}
+<div class="container">
+    <a href="{{url_for('play')}}" class="btn">Play<i class='bx bx-play'></i></a>
+    <a href="{{url_for('instruction')}}" class="btn">How To Play<i class='bx bx-list-check'></i></a>
+    <a href="{{url_for('leaderboard')}}" class="btn">LeaderBoard<i class='bx bxs-crown'></i></a>
+</div>
+{%endblock%}

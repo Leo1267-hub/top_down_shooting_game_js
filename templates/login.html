@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<title> {{title}}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='forms.css')}}">
+{%endblock%}
+
+{%block main_content%}
+<div class="container">
+    <h1>Login</h1>
+    <form method="POST">
+
+        {{form.hidden_tag()}}
+        <div class="input_field">
+            {{form.user_id()}}
+
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input_field">
+            {{form.password()}}
+
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="submit">
+            {{form.submit()}}
+        </div>
+    </form>
+    <div class="register">
+        <p>Don't have an account?<a href="{{url_for('register')}}"> Register</a></p>
+    </div>
+    <section class="error">
+        <p>
+            {%for error in form.user_id.errors%}
+            {{error}}
+            {%endfor%}
+            {%for error in form.password.errors%}
+            {{error}}
+            {%endfor%}
+        </p>
+    </section>
+</div>
+{%endblock%}

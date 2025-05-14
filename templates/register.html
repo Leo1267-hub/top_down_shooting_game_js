@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<title>{{title}}</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='forms.css')}}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+{%endblock%}
+
+{%block main_content%}
+<div class="container">
+    <h1>Registration</h1>
+    <form method="POST">
+        {{form.hidden_tag()}}
+        <div class="input_field">
+            {{form.user_id()}}
+
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input_field">
+            {{form.password()}}
+
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="input_field">
+            {{form.password_confirm()}}
+
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        {{form.submit()}}
+        <section class="error">
+            <p>
+                {%for error in form.user_id.errors%}
+                {{error}}
+                {%endfor%}
+                {%for error in form.password_confirm.errors%}
+                {{error}}
+                {%endfor%}
+            </p>
+        </section>
+    </form>
+</div>
+{%endblock%}

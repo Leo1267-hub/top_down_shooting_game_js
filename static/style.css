@@ -1,0 +1,39 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+canvas {
+    background-color: black;
+    display: block;
+    margin: 1em auto;
+}
+
+body {
+    background-color: green;
+    color: wheat;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+#again {
+    color: whitesmoke;
+}
+
+#again:hover {
+    color: rgb(193, 183, 183);
+}
+
+#home {
+    color: whitesmoke;
+}
+
+#home:hover {
+    color: rgb(193, 183, 183);
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Shooter</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css')}}">
+    <script type="module" src="{{ url_for('static',filename = 'script.js')}}"></script>
+
+</head>
+
+<body>
+    <!-- <p id="bullets"></p>
+    <p id="kills"></p> -->
+    <canvas width="1280" height="768"></canvas> <!-- making the canvas all measures are in px-->
+    <p id="outcome" class="show"></p>
+    <a id="again" class="show" href="{{url_for('play')}}"></a>
+    <a id="home" class="show" href="{{url_for('index')}}"></a>
+
+</body>
+
+</html>

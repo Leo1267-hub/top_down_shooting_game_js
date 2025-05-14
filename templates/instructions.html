@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title> {{title}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='instructions.css') }}">
+
+{% endblock %}
+
+{% block main_content %}
+<div class="guide_container">
+    <h1>How to Play</h1>
+
+    <h2>Point of the Game</h2>
+    <ul>
+        <li>Survive as long as possible while eliminating enemies</li>
+        <li>Scoring: Total seconds survived + number of kills</li>
+    </ul>
+
+    <h2>Game Interface</h2>
+    <ul>
+        <li>
+            <strong>Stamina Bar (Top-Left):</strong> Manage your energy - hold SHIFT to boost speed
+        </li>
+        <li><strong>Health Bar:</strong> Below stamina - watch this carefully!</li>
+        <li>
+            <strong>Ammo Counter (XX/XXX):</strong> Current clip / reserve ammo (Max 180)
+        </li>
+        <li>
+            <strong>Low Ammo:</strong> Golden lines guide you to nearest ammo kit when you have no bullets
+        </li>
+        <li>
+            <strong>Low Health:</strong> Red lines guide you to nearest medical kit when you have at max 40 hp
+        </li>
+        <li>
+            <strong>Collectibles:</strong>
+            <span id="bullet">Bullet icons</span> for ammo,
+            <span id="kit">Red kits</span> for health
+        </li>
+    </ul>
+
+    <h2>Controls</h2>
+    <ul>
+        <li><strong>Movement:</strong> W, A, S, D keys</li>
+        <li><strong>Turret Rotation:</strong>
+            <> Arrow keys
+        </li>
+        <li><strong>Actions:</strong> R (Reload), SPACE (Shoot)</li>
+        <li><strong>Special:</strong> L (Laser sight), SHIFT (Speed boost)</li>
+        <li><strong>Mines:</strong> Press 2 to place mine that will explode after 3 seconds and damage all enemies
+            within
+            the radius <strong>(you have only 2 mines for the entire game)</strong></li>
+        <li><strong>Shooting Enemies:</strong> They will appear after first 15 seconds</li>
+    </ul>
+    <h2>Boss</h2>
+    <ul>
+        <li>The boss will spawn every minute</li>
+        <li>Boss can shoot 8 bullets in all directions with spiral trajectory</li>
+        <li>Boss can also spawn new enemies and plants on which if you stand, you will receive damage</li>
+    </ul>
+    <div class="cheat_section">
+        <h2>Cheats</h2>
+        <ul>
+            <li>H - Set invulnerability (for testing purposes)</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

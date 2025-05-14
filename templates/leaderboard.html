@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='basket.css') }}">
+{% endblock %}
+
+{% block main_content %}
+{%if leaderboard%}
+<div class="centre">
+    <table class="checkout_table">
+        <caption>LeaderBoard</caption>
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+            <th>Used Cheats?</th>
+        </tr>
+
+        {% for user in leaderboard %}
+        <tr>
+            <td>{{ user['user_id'] }}</td>
+            <td>{{ user['score']}}</td>
+            <td>{{ user['cheats']}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% else %}
+<p class="message">No leaderboard</p>
+{% endif %}
+{% endblock %}
