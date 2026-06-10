@@ -22,6 +22,11 @@ import {
     SpawnSystem,
     RenderSystem
 } from "./systems/index.js";
+import {
+    GAME_ASSETS,
+    IMAGE_ASSETS,
+    AUDIO_ASSETS
+} from "./config/assets.js";
 
 // Modular entry point for the ongoing game refactor.
 // legacyGame.js still runs the existing game while these modules are extracted
@@ -51,6 +56,12 @@ export const Core = {
 export const Systems = {
     SpawnSystem,
     RenderSystem
+};
+
+export const Assets = {
+    GAME_ASSETS,
+    IMAGE_ASSETS,
+    AUDIO_ASSETS
 };
 
 export const Utils = {
