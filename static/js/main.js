@@ -10,10 +10,22 @@ import {
     Health_ammo
 } from "./entities/index.js";
 import { randInt } from "./utils/random.js";
+import {
+    InputManager,
+    AssetLoader,
+    collides,
+    distance,
+    distanceBetween,
+    centerOf
+} from "./core/index.js";
+import {
+    SpawnSystem,
+    RenderSystem
+} from "./systems/index.js";
 
-// This file is the new modular entry point for the game refactor.
-// The next migration step is to move the existing game loop from static/script.js
-// into this file and replace the old inline entity classes with these imports.
+// Modular entry point for the ongoing game refactor.
+// legacyGame.js still runs the existing game while these modules are extracted
+// and prepared for a full Game class migration.
 
 export const Entities = {
     Player,
@@ -25,6 +37,20 @@ export const Entities = {
     Mine,
     Ammo,
     Health_ammo
+};
+
+export const Core = {
+    InputManager,
+    AssetLoader,
+    collides,
+    distance,
+    distanceBetween,
+    centerOf
+};
+
+export const Systems = {
+    SpawnSystem,
+    RenderSystem
 };
 
 export const Utils = {
